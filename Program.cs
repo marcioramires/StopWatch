@@ -1,10 +1,18 @@
-﻿using System.Threading;
+﻿Start(6);
 
-Start();
-
-static void Start()
+static void Menu()
 {
-    int time = 10;
+    Console.Clear();
+    Console.WriteLine("S = Segundo => 10s = 10 segundos");
+    Console.WriteLine("M = Minuto => 1m = 1 minuto");
+    Console.WriteLine("0 = Sair");
+    Console.Write("Quanto tempo deseja contar?");
+
+    string data = Console.ReadLine();
+}
+
+static void Start(int time)
+{
     int currentTime = 0;
 
     while (currentTime != time) 
@@ -14,4 +22,8 @@ static void Start()
         Console.WriteLine(currentTime);
         Thread.Sleep(1000);
     }
+
+    Console.Clear();
+    Console.WriteLine("Stopwatch finalizado!");
+    Thread.Sleep(2500);
 }
